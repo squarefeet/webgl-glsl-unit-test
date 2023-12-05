@@ -1,0 +1,31 @@
+import { DataTexture, ShaderMaterial, TypedArray, Vector2 } from "three";
+import type { GLSLTestDefines, GLSLTestUniforms } from "./types";
+export declare class GLSLTest {
+    private renderTargets;
+    private scene;
+    private camera;
+    private renderer;
+    private mesh;
+    private renderTargetReadIndex;
+    private renderTargetWriteIndex;
+    inputBuffer: TypedArray;
+    outputBuffer: TypedArray;
+    textureSize: Vector2;
+    dataTexture: DataTexture;
+    defines: GLSLTestDefines;
+    uniforms: GLSLTestUniforms;
+    material: ShaderMaterial;
+    constructor(inputBuffer: TypedArray, uniforms?: GLSLTestUniforms, defines?: GLSLTestDefines, fragmentShader?: string, textureSize?: Vector2, dataTexture?: DataTexture, material?: ShaderMaterial);
+    private createShaderMaterial;
+    private resetRenderTargets;
+    private resetScene;
+    private resetCamera;
+    private getCurrentReadRenderTarget;
+    private getCurrentWriteRenderTarget;
+    private flipRenderTargets;
+    private renderInputBuffer;
+    private render;
+    reset(): void;
+    run(): void;
+    readPixels(size?: Vector2, offset?: Vector2): TypedArray;
+}

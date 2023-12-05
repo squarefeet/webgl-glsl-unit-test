@@ -1,0 +1,10 @@
+import { DataTexture, TypedArray, Vector2, WebGLRenderTarget } from "three";
+import type { GLSLTestDefines, GLSLTestUniforms } from './types';
+export declare function getTextureSize(inputBuffer: TypedArray): Vector2;
+export declare function createDataTexture(inputBuffer: TypedArray, size: Vector2): DataTexture;
+export declare function createRenderTarget(size: Vector2): WebGLRenderTarget;
+export declare function getDefineStrings(defines: GLSLTestDefines): string;
+export declare function getUniformType(uniformValue: unknown): string;
+export declare function getUniformStrings(uniforms: GLSLTestUniforms): string;
+export declare function processShader(shader: string, defines: GLSLTestDefines, uniforms: GLSLTestUniforms): string;
+export declare function isTypedArray(object: unknown): boolean;
