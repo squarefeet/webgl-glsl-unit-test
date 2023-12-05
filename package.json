@@ -1,8 +1,7 @@
 {
   "name": "webgl-glsl-unit-test",
   "description": "A helper library to test GLSL code within a unit test environment",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "files": [
     "dist",
@@ -11,24 +10,23 @@
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.ts",
+        "types": "./types/main.d.ts",
         "default": "./dist/index.js"
       },
       "require": {
-        "types": "./index.d.cts",
-        "default": "./index.cjs"
+        "types": "./types/main.d.ts",
+        "default": "./index.umd.cjs"
       }
     }
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "types": "./types/main.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
     "test": "vitest && npm run test:browser",
-    "test:browser": "yarn test:browser:chrome && yarn test:browser:firefox",
+    "test:browser": "npm run test:browser:chrome",
     "test:browser:chrome": "vitest --config vitest-browser.config.ts --browser=chrome",
     "test:browser:firefox": "vitest --config vitest-browser.config.ts --browser=firefox"
   },
@@ -40,7 +38,7 @@
     "vitest": "^1.0.1",
     "webdriverio": "^8.24.6"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@types/three": "^0.159.0",
     "three": "^0.159.0"
   }
