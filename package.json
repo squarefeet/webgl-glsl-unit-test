@@ -28,7 +28,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest && npm run test:browser",
-    "test:browser": "yarn test:browser:chrome && yarn test:browser:firefox",
+    "test:browser": "npm run test:browser:chrome",
     "test:browser:chrome": "vitest --config vitest-browser.config.ts --browser=chrome",
     "test:browser:firefox": "vitest --config vitest-browser.config.ts --browser=firefox"
   },
